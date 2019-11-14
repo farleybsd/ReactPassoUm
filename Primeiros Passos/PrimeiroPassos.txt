@@ -1,0 +1,9 @@
+
+1 -  Instalar a Lib do React
+      npm install create-react-app
+
+2 - Criando o projeto
+    npx create-react-app curso-react-alura
+
+3 - Start na aplicção 
+      npm start
