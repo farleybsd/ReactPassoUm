@@ -7,3 +7,5 @@
 
 3 - Start na aplicção 
       npm start
+4 -  Instalar materialize
+      npm install materialize-css@1.0.0

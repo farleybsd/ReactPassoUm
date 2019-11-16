@@ -15,13 +15,13 @@ class Formulario extends Component {
 
     escultadorDeInput = event => {
 
-        const {name,value} = event.target
+        const { name, value } = event.target
         this.setState({
-            [name] : value
+            [name]: value
         })
     }
 
-    submitFormulario = () =>{
+    submitFormulario = () => {
         this.props.escultadorDeSubmit(this.state)
         this.setState(this.stateInicial)
     }
@@ -31,38 +31,42 @@ class Formulario extends Component {
         const { nome, livro, preco } = this.state
         return (
             <form>
-
-                <label htmlFor="nome">Nome</label>
-                <input
-                    id="nome"
-                    type="text"
-                    name="nome"
-                    value={nome}
-                    onChange = {this.escultadorDeInput}
-                />
-
-                <label htmlFor="livro">Livro</label>
-                <input
-                    id="livro"
-                    type="text"
-                    name="livro"
-                    value={livro}
-                    onChange = {this.escultadorDeInput}
-                />
-
-
-                <label htmlFor="preco">Preço</label>
-                <input
-                    id="preco"
-                    type="text"
-                    name="preco"
-                    value={preco}
-                    onChange = {this.escultadorDeInput}
-                />
-
-
-                <button onClick={this.submitFormulario} type="button">Salvar
-    </button>
+                <div className="row">
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="nome">Nome</label>
+                        <input
+                            className="validate"
+                            id="nome"
+                            type="text"
+                            name="nome"
+                            value={nome}
+                            onChange={this.escultadorDeInput}
+                        />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="livro">Livro</label>
+                        <input
+                            className="validate"
+                            id="livro"
+                            type="text"
+                            name="livro"
+                            value={livro}
+                            onChange={this.escultadorDeInput}
+                        />
+                    </div>
+                    <div className="input-field col s4">
+                        <label className="input-field" htmlFor="preco">Preço</label>
+                        <input
+                            className="validate"
+                            id="preco"
+                            type="text"
+                            name="preco"
+                            value={preco}
+                            onChange={this.escultadorDeInput}
+                        />
+                    </div>
+                </div>
+                <button onClick={this.submitFormulario} type="button" className="waves-effect waves-light btn indigo lighten-2">Salvar</button>
             </form>
         )
     }
