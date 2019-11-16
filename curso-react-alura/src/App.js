@@ -1,42 +1,50 @@
-import React from 'react';
+import React , {Component} from 'react';
 import './App.css';
 import Tabela from './tabela'
 
 
-function App() {
-  const  autores =  [
-    {
-      nome: 'Paulo',
-      livro: 'React',
-      preco: '1000'
-    },
-    {
-      nome: 'Daniel',
-      livro: 'Java',
-      preco: '99'
-    },
-    {
-      nome: 'Marcos',
-      livro: 'Design',
-      preco: '150'
-    },
-    {
-      nome: 'Bruno',
-      livro: 'DevOps',
-      preco: '100'
-    },
-    {
-      nome: 'Farley',
-      livro: 'c#',
-      preco: '100'
-    }
-  ];
-  return (
-    <div className="App">
-      <Tabela autores = { autores }/>
+class App extends Component {
 
-    </div>
-  );
+  state = {
+      autores: [
+      {
+        nome: 'Paulo',
+        livro: 'React',
+        preco: '1000'
+      },
+      {
+        nome: 'Daniel',
+        livro: 'Java',
+        preco: '99'
+      },
+      {
+        nome: 'Marcos',
+        livro: 'Design',
+        preco: '150'
+      },
+      {
+        nome: 'Bruno',
+        livro: 'DevOps',
+        preco: '100'
+      },
+      {
+        nome: 'Farley',
+        livro: 'c#',
+        preco: '100'
+      }
+    ],
+
+  }
+  
+  render(){
+    return (
+      <div className="App">
+        <Tabela autores = {this.state.autores }/>
+  
+      </div>
+    );
+  }
+  
 }
 
 export default App;
