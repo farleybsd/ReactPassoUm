@@ -1,12 +1,12 @@
-import React , {Component} from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import Tabela from './tabela'
-
+import Form from './Formulario'
 
 class App extends Component {
 
   state = {
-      autores: [
+    autores: [
       {
         nome: 'Paulo',
         livro: 'React',
@@ -36,29 +36,35 @@ class App extends Component {
 
   }
 
-  removeAutor = index =>{
+  removeAutor = index => {
 
-    const {autores} = this.state
+    const { autores } = this.state
 
     this.setState({
 
-      autores:autores.filter((autor,posAtual)=>{
+      autores: autores.filter((autor, posAtual) => {
         //console.log(index,posAtual)
-        return posAtual !==index
+        return posAtual !== index
       }),
     })
 
   }
-  
-  render(){
+
+  escultadorDeSubmit = autor => {
+    this.setState({autores:[...this.state.autores,autor]})
+  }
+
+  render() {
     return (
-      <div className="App">
-        <Tabela autores = {this.state.autores } removeAutor = {this.removeAutor}/>
-  
-      </div>
+
+      <Fragment>
+        <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
+        <Form escultadorDeSubmit={this.escultadorDeSubmit} />
+      </Fragment>
+
     );
   }
-  
+
 }
 
 export default App;
